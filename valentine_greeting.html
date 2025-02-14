@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .frame {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: red;
+            font-size: 2.2em;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.5;
+        }
+        /* Animasi Love Bubble */
+        .love-bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: path("M10 30 Q-10 10 10 0 Q30 10 10 30");
+            opacity: 0.7;
+            animation: float 4s infinite linear;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+        /* Efek Glitter */
+        .glitter {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(1.5);
+            }
+        }
+        /* Responsif */
+        @media (max-width: 768px) {
+            .frame {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation"></div>
+
+    <div class="container">
+        <div class="frame">
+            <h1>Happy Valentine's Day, Sayanggkuu! ❤️</h1>
+            <p>Semoga hari ini penuh dengan cinta dan kebahagiaan! 💖</p>
+            <p>Hari ini spesial, bukan cuma karena Valentine’s Day, tapi karena aku bisa mengungkapkan betapa bersyukurnya aku punya kamu dalam hidupku. 💖</p>
+            <p>Walaupun kita lagi LDR , jarak ini nggak akan pernah bisa mengurangi rasa sayangku ke kamuu. Kamu itu seperti matahari di hariku, bulan di malamku, dan paket data di koneksi hatiku. ☀️🌙📶 Tanpa kamu, hidupku berasa buffering terus. 😆</p>
+            <p>Babeee, kamu tahu nggak? Sejak kenal kamu, aku jadi percaya kalau cinta sejati itu ada. Walaupun nggak bisa sering ketemu, aku tetap merasa dekat karena kamu selalu ada di hatiku. Setiap pesan, tawa, dan cerita yang kita bagi itu bagaikan charger yang bikin semangatku full lagi. 🔋💞</p>
+            <p> Aku mungkin nggak bisa kasih coklat atau bunga secara langsung hari ini, tapi aku kasih sesuatu yang lebih tahan lama: <b>doa dan cinta yang nggak akan habis untuk kamu.</b> ❤️✨ Aku selalu berdoa semoga kita selalu dikuatkan, dimudahkan, dan suatu hari nanti bisa ngelewatin semua ini bareng-bareng, tanpa jarak di antara kita.</p>
+            <p>Kamu adalah alasan aku tersenyum setiap hari, meskipun kita terpisah ribuan kilometer. Aku janji, suatu saat nanti, aku bakal ada di sampingmu bukan cuma lewat layar, tapi dalam setiap momen indah yang kita ciptakan bersama. 💑</p>
+            <p><b>I love you Sayangku! 💕</b> Semoga hari ini penuh dengan kebahagiaan dan cinta, terutama dari aku yang selalu merindukanmu! 😘</p>
+            <p>GodblessU Always Sayangkuu✨❤️</p>
+        </div>
+    </div>
+
+    <script>
+        const animationContainer = document.querySelector('.animation');
+
+        // Animasi Love Bubble
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement("span");
+            heart.classList.add("love-bubble");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.backgroundColor = Math.random() > 0.5 ? "red" : "deeppink";
+            animationContainer.appendChild(heart);
+        }
+
+        // Efek Glitter
+        for (let i = 0; i < 20; i++) {
+            let glitter = document.createElement("div");
+            glitter.classList.add("glitter");
+            glitter.style.left = Math.random() * 100 + "vw";
+            glitter.style.top = Math.random() * 100 + "vh";
+            animationContainer.appendChild(glitter);
+        }
+    </script>
+</body>
+</html>
